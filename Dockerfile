@@ -12,6 +12,7 @@ RUN mkdir -p /var/run/sshd
 
 # Install JDK 8
 RUN apt-get install -y openjdk-8-jdk
+# Your JAVA_HOME will be /usr/lib/jvm/java-1.8.0-openjdk-amd64/ .You many need this to set in manage jenkins > Global tools config
 
 # Add user jenkins to the image
 RUN adduser --quiet jenkins
@@ -25,6 +26,8 @@ ADD resources/settings.xml /home/jenkins/.m2/
 RUN chown -R jenkins:jenkins /home/jenkins/.m2/ 
 
 RUN apt-get install -y maven
+# Your MAVEN_HOME will be /usr/share/maven .You many need this to set in manage jenkins > Global tools config
+
 # Standard SSH port
 EXPOSE 22
 

@@ -48,7 +48,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN  mkdir -p /opt/selenium
-RUN apt-get install -y zip
+RUN apt-get update && apt-get install -y unzip
 
 #==================
 # Chrome webdriver

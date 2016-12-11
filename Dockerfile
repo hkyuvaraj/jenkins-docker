@@ -73,6 +73,12 @@ RUN apt-get update -qqy \
   && mkdir -p /root/.vnc \
   && x11vnc -storepasswd secret ~/.vnc/passwd
   
+#=================================
+# Chrome Launch Script Modication
+#=================================
+COPY ./resources/chrome_launcher.sh /opt/google/chrome/google-chrome
+RUN chmod +x /opt/google/chrome/google-chrome
+
 # Following line fixes
 # https://github.com/SeleniumHQ/docker-selenium/issues/87
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null

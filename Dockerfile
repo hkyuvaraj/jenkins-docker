@@ -86,6 +86,16 @@ ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 RUN rm /home/jenkins/.m2/settings.xml
 ADD resources/settings.xml /home/jenkins/.m2/
 
+RUN apt-get update && apt-get install -y xvfb
+ENV DISPLAY :99
+
+# Install Xvfb init script
+ADD resources/xvfb_init /etc/init.d/xvfb
+RUN chmod a+x /etc/init.d/xvfb
+ADD resources/xvfb-daemon-run /usr/bin/xvfb-daemon-run
+RUN chmod a+x /usr/bin/xvfb-daemon-run
+
+
 # Standard SSH port
 EXPOSE 22
 

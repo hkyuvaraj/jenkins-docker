@@ -73,6 +73,10 @@ RUN apt-get update -qqy \
   && mkdir -p /root/.vnc \
   && x11vnc -storepasswd secret ~/.vnc/passwd
   
+# Following line fixes
+# https://github.com/SeleniumHQ/docker-selenium/issues/87
+ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
+
 # Standard SSH port
 EXPOSE 22
 

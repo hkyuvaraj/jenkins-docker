@@ -83,6 +83,9 @@ RUN chmod +x /opt/google/chrome/google-chrome
 # https://github.com/SeleniumHQ/docker-selenium/issues/87
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 
+RUN rm /home/jenkins/.m2/settings.xml
+ADD resources/settings.xml /home/jenkins/.m2/
+
 # Standard SSH port
 EXPOSE 22
 

@@ -18,7 +18,7 @@
       <!--This sends everything else to /public -->
       <id>nexus</id>
       <mirrorOf>*</mirrorOf>
-      <url>http://divyayuvaraj:8081/nexus/content/groups/public</url>
+      <url>http://192.168.42.14:8081/nexus/content/groups/public</url>
     </mirror>
   </mirrors>
 
@@ -39,7 +39,7 @@
 		
 		 <repository>
           <id>thirdparty</id>
-          <url>http://divyayuvaraj:8081/nexus/content/repositories/thirdparty/</url>
+          <url>http://192.168.42.14:8081/nexus/content/repositories/thirdparty/</url>
           <releases><enabled>true</enabled></releases>
           <snapshots><enabled>true</enabled></snapshots>
         </repository>
@@ -55,7 +55,7 @@
 		
 		<pluginRepository>
           <id>thirdparty</id>
-          <url>http://divyayuvaraj:8081/nexus/content/repositories/thirdparty/</url>
+          <url>http://192.168.42.14:8081/nexus/content/repositories/thirdparty/</url>
           <releases><enabled>true</enabled></releases>
           <snapshots><enabled>true</enabled></snapshots>
         </pluginRepository>

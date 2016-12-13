@@ -109,4 +109,5 @@ RUN chmod +x /opt/bin/entry_point.sh
 # Standard SSH port
 EXPOSE 22
 
+
 CMD ["/opt/bin/entry_point.sh"]
